@@ -1,0 +1,17 @@
+.DS_Store
+build/
+*.dmg
+.swiftpm/
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+error1.png
+error2.png
+14/
+.claude/
