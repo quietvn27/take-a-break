@@ -224,7 +224,7 @@ struct SettingsView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
         }
-        .frame(minWidth: 380, minHeight: 740)
+        .frame(minWidth: 380, minHeight: 700)
     }
 
     private func formatCountdown(_ seconds: Int) -> String {
