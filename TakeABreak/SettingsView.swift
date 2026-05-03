@@ -175,6 +175,12 @@ struct SettingsView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 8)
 
+            if case .working(let microSecs, let macroSecs) = scheduler.state {
+                countdownStrip(microSecs: microSecs, macroSecs: macroSecs)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 8)
+            }
+
             Form {
                 Section("Micro break (eye rest)") {
                     HoverableTimeField(label: "Work for", unit: "minutes", value: microWorkMinutes)
@@ -219,6 +225,47 @@ struct SettingsView: View {
             .padding(.vertical, 12)
         }
         .frame(minWidth: 380, minHeight: 520)
+    }
+
+    private func formatCountdown(_ seconds: Int) -> String {
+        let m = seconds / 60
+        let s = seconds % 60
+        return String(format: "%d:%02d", m, s)
+    }
+
+    private func countdownStrip(microSecs: Int, macroSecs: Int) -> some View {
+        HStack(spacing: 0) {
+            VStack(spacing: 3) {
+                Text("Micro break in")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                Text(formatCountdown(microSecs))
+                    .font(.system(.body, design: .monospaced).bold())
+                    .foregroundStyle(.primary)
+            }
+            .frame(maxWidth: .infinity)
+
+            Divider().frame(height: 32)
+
+            VStack(spacing: 3) {
+                Text("Macro break in")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                Text(formatCountdown(macroSecs))
+                    .font(.system(.body, design: .monospaced).bold())
+                    .foregroundStyle(.primary)
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .padding(.vertical, 10)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(nsColor: .controlBackgroundColor))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color(nsColor: .separatorColor), lineWidth: 1)
+        )
     }
 
     private var onOffToggle: some View {
