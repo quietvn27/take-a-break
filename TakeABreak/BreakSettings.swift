@@ -13,9 +13,9 @@ struct BreakSettings {
     var overlayStyle: OverlayStyle
 
     static let defaults = BreakSettings(
-        microWorkSeconds: 300,
+        microWorkSeconds: 900,
         microBreakSeconds: 15,
-        macroWorkSeconds: 1200,
+        macroWorkSeconds: 3600,
         macroBreakSeconds: 300,
         overlayStyle: .animation
     )
@@ -24,9 +24,9 @@ struct BreakSettings {
         let ud = UserDefaults.standard
         let styleRaw = ud.string(forKey: "overlayStyle") ?? "animation"
         return BreakSettings(
-            microWorkSeconds: ud.integer(forKey: "microWorkSeconds").nonZeroOr(300),
+            microWorkSeconds: ud.integer(forKey: "microWorkSeconds").nonZeroOr(900),
             microBreakSeconds: ud.integer(forKey: "microBreakSeconds").nonZeroOr(15),
-            macroWorkSeconds: ud.integer(forKey: "macroWorkSeconds").nonZeroOr(1200),
+            macroWorkSeconds: ud.integer(forKey: "macroWorkSeconds").nonZeroOr(3600),
             macroBreakSeconds: ud.integer(forKey: "macroBreakSeconds").nonZeroOr(300),
             overlayStyle: OverlayStyle(rawValue: styleRaw) ?? .animation
         )
