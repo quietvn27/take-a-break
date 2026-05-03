@@ -65,7 +65,7 @@ struct BreakControlsView: View {
     var showHeader: Bool = true
 
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack(alignment: showHeader ? .center : .top) {
             Color.clear
             VStack(spacing: 24) {
                 if showHeader {
@@ -100,7 +100,7 @@ struct BreakControlsView: View {
                     .foregroundColor(.white)
                 }
             }
-            .padding(.top, 60)
+            .padding(.top, showHeader ? 0 : 60)
         }
     }
 
