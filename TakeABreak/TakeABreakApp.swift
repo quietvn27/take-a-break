@@ -9,6 +9,6 @@ struct TakeABreakApp: App {
             SettingsView()
                 .environmentObject(appDelegate.scheduler)
         }
-        .defaultSize(width: 380, height: 620)
+        .defaultSize(width: 380, height: 740)
     }
 }
