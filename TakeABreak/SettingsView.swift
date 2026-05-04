@@ -201,6 +201,7 @@ struct SettingsView: View {
                 }
             }
             .formStyle(.grouped)
+            .fixedSize(horizontal: false, vertical: true)
 
             Divider()
 
@@ -224,7 +225,7 @@ struct SettingsView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
         }
-        .frame(minWidth: 380, minHeight: 700)
+        .frame(minWidth: 380, minHeight: 640)
     }
 
     private func formatCountdown(_ seconds: Int) -> String {
