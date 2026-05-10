@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1B2C3D4E5F6A1B2C3D4E522 /* TakeABreak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeABreak.entitlements; sourceTree = "<group>"; };
 		A1B2C3D4E5F6A1B2C3D4E501 /* TakeABreakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeABreakApp.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6A1B2C3D4E502 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6A1B2C3D4E503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		A1B2C3D4E5F6A1B2C3D4E5F7 /* TakeABreak */ = {
 			isa = PBXGroup;
 			children = (
+				A1B2C3D4E5F6A1B2C3D4E522 /* TakeABreak.entitlements */,
 				A1B2C3D4E5F6A1B2C3D4E501 /* TakeABreakApp.swift */,
 				A1B2C3D4E5F6A1B2C3D4E502 /* MenuView.swift */,
 				A1B2C3D4E5F6A1B2C3D4E512 /* BreakSettings.swift */,
@@ -168,6 +170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TakeABreak/TakeABreak.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -192,6 +195,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TakeABreak/TakeABreak.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
