@@ -8,10 +8,10 @@ Take a Break runs two independent break timers in the background:
 
 | Break type | Default interval | Default duration |
 |---|---|---|
-| **Micro break** (eye rest) | Every 5 minutes | 15 seconds |
-| **Macro break** (long break) | Every 20 minutes | 5 minutes |
+| **Micro break** (eye rest) | Every 15 minutes | 15 seconds |
+| **Macro break** (long break) | Every 60 minutes | 5 minutes |
 
-When a break fires, a full-screen dark overlay covers your display. You must wait out the countdown or click the skip button to dismiss it.
+When a break fires, a full-screen overlay covers your display. You must wait out the countdown or click the skip button to dismiss it.
 
 **Smart scheduling:** If a micro break is due within 45 seconds of an upcoming macro break, the micro break is skipped automatically. After a macro break ends, both timers reset from zero.
 
@@ -19,7 +19,7 @@ When a break fires, a full-screen dark overlay covers your display. You must wai
 
 1. Open `TakeABreak.dmg`
 2. Drag **TakeABreak** into the **Applications** folder
-3. Launch the app — a 👁 eye icon appears in your menu bar
+3. Launch the app — a eye icon appears in your menu bar
 
 **First launch:** macOS Gatekeeper will block the app since it is not notarized. Right-click the app → **Open** → **Open** to bypass this once. Alternatively, run:
 
@@ -31,14 +31,12 @@ The app registers itself to **launch at login** automatically on first run. You 
 
 ## Usage
 
-Click the 👁 icon in the menu bar to access controls:
+Click the eye icon in the menu bar to open Settings, where you can:
 
-| Menu item | Action |
-|---|---|
-| **Pause** | Stop break timers until you resume |
-| **Resume** | Restart timers from zero |
-| **Settings…** | Open the settings window |
-| **Quit** | Exit the app |
+- Toggle breaks **On / Off** with a single switch
+- See a **live countdown** to the next micro and macro break
+- Adjust all durations
+- Choose the overlay style
 
 ### During a break
 
@@ -46,16 +44,34 @@ A full-screen overlay appears with a countdown timer. Click **Skip Break** (micr
 
 ### Settings
 
-Open **Settings…** from the menu bar to configure durations (in seconds):
+Open **Settings…** from the menu bar to configure:
 
-- **Micro break — Work for:** how long between eye-rest breaks (default 300s = 5 min)
-- **Micro break — Break for:** duration of each eye-rest break (default 15s)
-- **Macro break — Work for:** how long between long breaks (default 1200s = 20 min)
-- **Macro break — Break for:** duration of each long break (default 300s = 5 min)
-- **Launch at Login:** start Take a Break automatically when you log in
+| Setting | Default | Unit |
+|---|---|---|
+| Micro break — Work for | 15 | minutes |
+| Micro break — Break for | 15 | seconds |
+| Macro break — Work for | 60 | minutes |
+| Macro break — Break for | 5 | minutes |
 
-Changes take effect immediately — the timers restart with the new values when you click **Save**.
+- **Overlay style:** Choose between **Simple** (solid dark overlay) or **Animation** (animated overlay)
+- **On/Off toggle:** Pause all breaks without quitting the app
+
+Changes take effect immediately when you click **Save**.
 
 ## Requirements
 
 - macOS 13 Ventura or later
+
+## Build from source
+
+```bash
+git clone https://github.com/your-username/take-a-break.git
+cd take-a-break
+open TakeABreak.xcodeproj
+```
+
+Build and run with **Cmd+R** in Xcode, or build a distributable DMG:
+
+```bash
+./build_dmg.sh
+```
